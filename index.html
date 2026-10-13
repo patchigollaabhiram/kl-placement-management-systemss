@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KL Placement Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <h2>KL Placements</h2>
+    <button onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('courses')">Courses</button>
+    <button onclick="showPage('certificates')">Certificates</button>
+    <button onclick="showPage('cgpa')">CGPA</button>
+    <button onclick="showPage('companies')">Companies</button>
+    <button onclick="showPage('placements')">Placements</button>
+    <button onclick="showPage('profile')">Student Profile</button>
+  </aside>
+
+  <main class="content">
+    <header>
+      <h1>KL Placement Management System</h1>
+      <p>Student Career and Placement Dashboard</p>
+    </header>
+
+    <section id="dashboard" class="page">
+      <h2>Dashboard</h2>
+      <div class="cards">
+        <div class="card"><h3>Courses</h3><p>5</p></div>
+        <div class="card"><h3>Certificates</h3><p id="certCount">0</p></div>
+        <div class="card"><h3>CGPA</h3><p id="dashCgpa">--</p></div>
+        <div class="card"><h3>Applications</h3><p id="appCount">0</p></div>
+      </div>
+      <p>Welcome to your placement management portal.</p>
+    </section>
+
+    <section id="courses" class="page">
+      <h2>Available Courses</h2>
+      <div class="cards">
+        <div class="card">Computer Science Engineering</div>
+        <div class="card">Electronics Engineering</div>
+        <div class="card">Electrical Engineering</div>
+        <div class="card">Mechanical Engineering</div>
+        <div class="card">Civil Engineering</div>
+      </div>
+    </section>
+
+    <section id="certificates" class="page">
+      <h2>My Certificates</h2>
+      <input id="certificate" placeholder="Certificate name">
+      <button class="action" onclick="addCertificate()">Add Certificate</button>
+      <ul id="certificateList"></ul>
+    </section>
+
+    <section id="cgpa" class="page">
+      <h2>Semester-wise CGPA Calculator</h2>
+      <div id="semesters"></div>
+      <button class="action" onclick="calculateCGPA()">Calculate CGPA</button>
+      <h3 id="cgpaResult">CGPA: --</h3>
+      <p>Simple average of semester SGPAs. Official CGPA may be credit-weighted.</p>
+    </section>
+
+    <section id="companies" class="page">
+      <h2>Recruiting Companies</h2>
+      <div class="cards">
+        <div class="card">TCS</div>
+        <div class="card">Infosys</div>
+        <div class="card">Wipro</div>
+        <div class="card">Accenture</div>
+        <div class="card">Cognizant</div>
+      </div>
+      <p>Example companies for this academic demonstration.</p>
+    </section>
+
+    <section id="placements" class="page">
+      <h2>Placement Opportunities</h2>
+      <div class="card">
+        <h3>Software Developer — Demo Job</h3>
+        <p>Example eligibility: CGPA 7.0 or above</p>
+        <button class="action" onclick="applyJob()">Apply</button>
+      </div>
+      <p id="applyResult"></p>
+    </section>
+
+    <section id="profile" class="page">
+      <h2>Student Profile</h2>
+      <input id="studentName" placeholder="Student name">
+      <input id="rollNumber" placeholder="Roll number">
+      <select id="branch">
+        <option>CSE</option><option>ECE</option>
+        <option>EEE</option><option>Mechanical</option>
+        <option>Civil</option>
+      </select>
+      <button class="action" onclick="saveProfile()">Save Profile</button>
+      <p id="profileResult"></p>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
